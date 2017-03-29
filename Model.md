@@ -42,7 +42,7 @@ var Model = function(a,b,c){
 ## 调用
 ```javascript
 $(function(){
-	var demo = new model_Xi("EA5271","xxxxxx","xxxxxxx ");
+	var demo = new Model("EA5271","xxxxxx","xxxxxxx ");
 	$("body").css({"marginTop":"50px"})
 })
 ```
