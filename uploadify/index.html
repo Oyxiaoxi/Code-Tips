@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>uploadify</title>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../uploadify/uploadify/jquery.uploadify.min.js"></script>
+    <style>
+        .container {
+            max-width: 640px;
+            min-width: 320px;
+            margin: 0 auto;
+        }
+        h1{
+            text-align: center;
+        }
+        input{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Uploadify Demo</h1>
+        <form>
+            <div id="queue"></div>
+            <input id="file_upload" name="file_upload" type="file" multiple="true">
+        </form>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#file_upload').uploadify({
+                'multi':false,
+                'fileSizeLimit': '20MB',
+                'uploadLimit': 1,
+                'queueSizeLimit': 1,
+                'fileTypeExts': '*.doc;*.docx;*.xls;*.xlsx;*.pdf;*.ppt;*.txt;*.wpt;*.wps;*.dot', //默认值*.*，定义可以上传的文件类型
+                'fileTypeDesc': '文档类型',
+                'queueID': 'queue',
+                'formData': { "action": "upload", "sid": "" },
+                'swf': '../uploadify/uploadify/uploadify.swf',
+                'uploader': '../uploadify/uploadify/uploadify.php',
+                'checkExisting': '../uploadify/uploadify/check-exists.php',
+            });
+        });
+    </script>
+
+</body>
+
+</html>
