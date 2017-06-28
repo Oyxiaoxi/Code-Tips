@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../mail/css/style.css">
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./layui/layui.js"></script>
+    <title>PHPmail</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="javascript:void(0);" id="mailForm" method="post" onsubmit="return verifyForm();">
+            <h3>免费预约平台</h3>
+            <p><i class="iconfont icon-laba"></i>通过网络、手机挂号，可享优先学习权</p>
+            <ul class="uk-delimit-padding">
+                <li class="w30"><i class="iconfont icon-keshixuanze"></i>选择类型：</li>
+                <li class="w50">
+                    <select name="fgenre" id="">
+                        <option value="TypeScript" selected="TypeScript">TypeScript</option>
+                        <option value="NodeJs" >NodeJs</option>
+                        <option value="Swift" >Swift</option>
+                        <option value="Android" >Android</option>
+                        <option value="VueJS" >VueJS</option>
+                        <option value="Mysql" >Mysql</option>
+                        <option value="GoLang" >GoLang</option>
+                        <option value="Python" >Python</option>
+                    </select>
+                </li>
+                <li class="clearfix"></li>
+                <li class="w30"><i class="iconfont icon-user"></i>您的尊称：</li>
+                <li class="w50"><input type="text" name="fname" id="fname" placeholder="请输入您的尊称"></li>
+                <li class="clearfix"></li>
+                <li class="w30"><i class="iconfont icon-dianhua"></i>您的电话：</li>
+                <li class="w50"><input type="text" name="ftell" id="ftell" placeholder="请输入您的电话"></li>
+                <li class="clearfix"></li>
+                <li class="w30"><i class="iconfont icon-shijian"></i>预约时间：</li>
+                <li class="w50"><input type="text" name="ftime" id="ftime" placeholder="请选择您的预约时间" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD'})"></li>
+                <li class="clearfix"></li>
+                <li class="w30"><i class="iconfont icon-chat51"></i>病情留言：</li>
+                <li class="w50"><textarea name="fmessage" id="fmessage" placeholder="请讲重点"></textarea></li>
+                <li class="clearfix"></li>
+            </ul>
+            <input type="submit" value="提交预约" id="saveForm">
+        </form>
+    </div>
+    <script type="text/javascript" src="./js/verifyForm.js"></script>
+</body>
+
+</html>

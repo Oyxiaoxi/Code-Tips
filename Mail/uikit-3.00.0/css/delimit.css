@@ -1,0 +1,729 @@
+/**
+* Author:Oyxiaoxi
+* Modify:2017-02-08 
+* Eamil:Oyxiaoxi@hotmail.com 
+*/
+
+
+/** 
+* Color 
+* Time:2017-01-08
+* Modify:2017-02-08 
+*/
+
+.uk-delimit-red {
+    background-color: #e3582f;
+}
+
+.uk-delimit-yellow {
+    background-color: #e6b364;
+}
+
+.uk-delimit-blue {
+    background-color: #6791b7;
+}
+
+.uk-delimit-bluex {
+    background-color: #66c8c9;
+}
+
+.uk-delimit-green {
+    background-color: #31d28f;
+}
+
+.uk-delimit-blue3 {
+    background-color: #1986cb !important;
+}
+
+.uk-delimit-blue4 {
+    background-color: #8db3e2;
+}
+
+.uk-delimit-blue5 {
+    background-color: #0863b5;
+}
+
+.uk-delimit-blue7 {
+    background-color: #46c9f7;
+}
+
+.uk-delimit-purple {
+    background-color: #b2a1c7;
+}
+
+.uk-delimit-earth {
+    background-color: #938953;
+}
+
+.uk-delimit-red2 {
+    background-color: #ee4040 !important;
+}
+
+.uk-delimit-gray {
+    background-color: #e5e5e5;
+}
+
+.uk-delimit-gray2 {
+    background-color: #dfdfdf;
+}
+
+.uk-delimit-oranger {
+    background-color: #ff7300;
+}
+
+.uk-delimit-orange2 {
+    background-color: #f6911b;
+}
+
+.uk-delimit-orange3 {
+    background-color: #d77400;
+}
+
+.uk-delimit-green2 {
+    background-color: #3ca726;
+}
+
+.uk-delimit-green3 {
+    background-color: #1f9107;
+}
+
+.uk-delimit-yellow2 {
+    background-color: #a8b937;
+}
+
+.uk-delimit-yellow3 {
+    background-color: #8c9e12;
+}
+
+.uk-delimit-cyanblue {
+    background-color: #15a282;
+}
+
+.uk-delimit-meihong {
+    background-color: #e15f5f;
+}
+
+.uk-delimit-green4 {
+    background-color: #9bbb59;
+}
+
+.uk-delimit-yellow4 {
+    background-color: #eabe75;
+}
+
+.uk-delimit-purple2 {
+    background-color: #a189eb;
+}
+
+.uk-delimit-blue6 {
+    background-color: #13AEB2;
+}
+
+.uk-delimit-yellow5 {
+    background-color: #FFA800;
+}
+
+.uk-delimit-purple3 {
+    background-color: #b2a2c7;
+}
+
+.uk-delimit-red3 {
+    background-color: #ff6e8f;
+}
+
+.uk-delimit-red4 {
+    background-color: #c5256b;
+}
+
+.uk-delimit-red5 {
+    background-color: #f7cebc;
+}
+
+.uk-delimit-white {
+    background-color: white;
+}
+
+.uk-delimit-blue10 {
+    background-color: #2f3742;
+}
+
+.uk-delimit-blue11 {
+    background-color: #79a3df;
+}
+
+.uk-delimit-blue12 {
+    background-color: #9acefe;
+}
+
+.uk-delimit-yellow6 {
+    background-color: #ec9b28;
+}
+
+.uk-delimit-pink {
+    background-color: #ff8ca1;
+}
+
+.uk-delimit-purple4 {
+    background-color: #920784;
+}
+
+.uk-delimit-pink2 {
+    background-color: #fa71ab;
+}
+
+.uk-delimit-pink3 {
+    background-color: #fa71ab;
+}
+
+.uk-delimit-green5 {
+    background-color: #e5eec7;
+}
+
+.uk-delimit-pink4 {
+    background-color: #ffe6ea;
+}
+
+.uk-delimit-pink5 {
+    background-color: #e9546b;
+}
+
+.uk-delimit-pink6 {
+    background-color: #f4e2d4;
+}
+
+.uk-delimit-purple5 {
+    background-color: #f3dbf0;
+}
+
+.uk-delimit-purple6 {
+    background-color: #5c1e3f;
+}
+
+.uk-delimit-purple7 {
+    background-color: #7b2f78;
+}
+
+.uk-delimit-red6 {
+    background-color: #a50028;
+}
+
+.uk-delimit-black {
+    background-color: black;
+}
+
+.uk-delimit-pink7 {
+    background-color: #ea4c89;
+}
+
+.uk-delimit-white {
+    background-color: white;
+}
+
+/**
+* Text affect
+* Time:2017-01-08
+* Modify:2017-02-07
+*/
+
+.uk-text-fristIndent {
+    text-indent: 2em;
+    line-height: 1.8;
+}
+
+.uk-text-fristIndent-small {
+    text-indent: 2em;
+    line-height: 1.5;
+}
+
+.uk-text-fristIndent-desc {
+    line-height: 1.8;
+}
+
+.uk-text-delimit-white {
+    color: white;
+}
+
+.uk-text-delimit-blue1 {
+    color: #006399;
+}
+
+.uk-text-delimit-blue2 {
+    color: #31a2eb;
+}
+
+.uk-text-delimit-yellow1 {
+    color: #fff45c;
+}
+
+.uk-text-delimit-height {
+    line-height: 1.5;
+}
+
+.uk-text-underline,
+.uk-text-underline:hover {
+    color: #00a0e9;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.uk-text-delimit-pink {
+    color: #ff8ca1 !important;
+}
+
+.uk-text-delimit-pink2 {
+    color: #fa71ab;
+}
+
+.uk-text-delimit-pink3 {
+    color: #e15151;
+}
+
+.uk-text-delimit-cyanblue {
+    color: #15a282;
+}
+
+.uk-text-delimit-orange4 {
+    color: #e96620;
+}
+
+.uk-text-delimit-pink5 {
+    color: #e9546b;
+}
+
+.uk-delimit-gray {
+    background-color: #e5e5e5;
+}
+
+.uk-delimit-gray2 {
+    background-color: #dfdfdf;
+}
+
+.uk-delimit-oranger {
+    background-color: #ff7300;
+}
+
+.uk-delimit-orange2 {
+    background-color: #f6911b;
+}
+
+.uk-delimit-orange3 {
+    background-color: #d77400;
+}
+
+.uk-delimit-green2 {
+    background-color: #3ca726;
+}
+
+.uk-delimit-green3 {
+    background-color: #1f9107;
+}
+
+.uk-delimit-yellow2 {
+    background-color: #a8b937;
+}
+
+.uk-delimit-yellow3 {
+    background-color: #8c9e12;
+}
+
+.uk-delimit-cyanblue {
+    background-color: #15a282;
+}
+
+.uk-delimit-meihong {
+    background-color: #e15f5f;
+}
+
+.uk-delimit-green4 {
+    background-color: #9bbb59;
+}
+
+.uk-delimit-yellow4 {
+    background-color: #eabe75;
+}
+
+.uk-delimit-purple2 {
+    background-color: #a189eb;
+}
+
+.uk-delimit-blue6 {
+    background-color: #13AEB2;
+}
+
+.uk-delimit-yellow5 {
+    background-color: #FFA800;
+}
+
+.uk-delimit-purple3 {
+    background-color: #b2a2c7;
+}
+
+.uk-delimit-red3 {
+    background-color: #ff6e8f;
+}
+
+.uk-delimit-red4 {
+    background-color: #c5256b;
+}
+
+.uk-delimit-red5 {
+    background-color: #f7cebc;
+}
+
+.uk-delimit-white {
+    background-color: white;
+}
+
+.uk-delimit-blue10 {
+    background-color: #2f3742;
+}
+
+.uk-delimit-blue11 {
+    background-color: #79a3df;
+}
+
+.uk-delimit-blue12 {
+    background-color: #9acefe;
+}
+
+.uk-delimit-yellow6 {
+    background-color: #ec9b28;
+}
+
+.uk-delimit-pink {
+    background-color: #ff8ca1;
+}
+
+.uk-delimit-purple4 {
+    background-color: #920784;
+}
+
+.uk-delimit-pink2 {
+    background-color: #fa71ab;
+}
+
+.uk-delimit-pink3 {
+    background-color: #fa71ab;
+}
+
+.uk-delimit-green5 {
+    background-color: #e5eec7;
+}
+
+.uk-delimit-pink4 {
+    background-color: #ffe6ea;
+}
+
+.uk-delimit-pink5 {
+    background-color: #e9546b;
+}
+
+.uk-delimit-pink6 {
+    background-color: #fdd4d8;
+}
+
+.uk-delimit-pink7 {
+    background-color: #f38d95;
+}
+
+.uk-delimit-purple5 {
+    background-color: #f3dbf0;
+}
+
+.uk-delimit-purple6 {
+    background-color: #5c1e3f;
+}
+
+.uk-delimit-purple7 {
+    background-color: #7b2f78;
+}
+
+.uk-delimit-red6 {
+    background-color: #a50028;
+}
+
+
+/**
+* Text affect
+* Time:2017-01-08
+* Modify:2017-02-07
+*/
+
+.uk-text-fristIndent {
+    text-indent: 2em;
+    line-height: 1.8;
+}
+
+.uk-text-fristIndent-small {
+    text-indent: 2em;
+    line-height: 1.5;
+}
+
+.uk-text-fristIndent-desc {
+    line-height: 1.8;
+}
+
+.uk-text-delimit-white {
+    color: white;
+}
+
+.uk-text-delimit-blue1 {
+    color: #006399;
+}
+
+.uk-text-delimit-blue2 {
+    color: #31a2eb;
+}
+
+.uk-text-delimit-yellow1 {
+    color: #fff45c;
+}
+
+.uk-text-delimit-height {
+    line-height: 1.5;
+}
+
+.uk-text-underline,
+.uk-text-underline:hover {
+    color: #00a0e9;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.uk-text-delimit-pink {
+    color: #ff8ca1 !important;
+}
+
+.uk-text-delimit-pink2 {
+    color: #fa71ab;
+}
+
+.uk-text-delimit-pink3 {
+    color: #e15151;
+}
+
+.uk-text-delimit-cyanblue {
+    color: #15a282;
+}
+
+.uk-text-delimit-orange4 {
+    color: #e96620;
+}
+
+.uk-text-delimit-pink5 {
+    color: #e9546b;
+}
+
+.uk-text-delimit-gray {
+    color: #aaaaaa;
+}
+
+.uk-text-delimit-purple {
+    color: #6a1966;
+}
+
+.uk-text-delimit-purple2 {
+    color: #fc44bb;
+}
+
+.uk-text-delimit-red {
+    color: #a50028
+}
+
+.uk-text-delimit-red2 {
+    color: #c44a52
+}
+
+
+/* box-reflect文字倒影效果 */
+
+.uk-text-box-reflect {
+    width: 100%;
+    margin: 0 auto;
+    -webkit-box-reflect: below 0 -webkit-linear-gradient(transparent, transparent 50%, rgba(255, 255, 255, .3));
+    -moz-box-reflect: below 0 -webkit-linear-gradient(transparent, transparent 50%, rgba(255, 255, 255, .3));
+    -ms-box-reflect: below 0 -webkit-linear-gradient(transparent, transparent 50%, rgba(255, 255, 255, .3));
+    -o-box-reflect: below 0 -webkit-linear-gradient(transparent, transparent 50%, rgba(255, 255, 255, .3));
+    font: bold 50px/1.231 georgia, sans-serif;
+}
+
+
+/* text-fill-color 设置渐变字体 */
+
+.uk-text-fill-color {
+    width: 100%;
+    margin: 0 auto;
+    background: -webkit-linear-gradient(top, #eee, #aaa 50%, #333 51%, #000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font: bold 60px/1.231 georgia, sans-serif;
+    text-transform: uppercase;
+}
+
+
+/**
+* Padding
+* Addtime:2017-02-07
+*/
+
+.uk-delimit-padding {
+    padding: 0 2%;
+}
+
+.uk-delimit-goble-padding {
+    padding: 8px;
+}
+
+.uk-delimit-goble-small-padding {
+    padding: 5px;
+}
+
+.uk-delimit-padding-top {
+    padding-top: 20px;
+}
+
+.uk-delimit-padding-bottom {
+    padding-bottom: 20px;
+}
+
+.uk-delimit-small-padding-top {
+    padding-top: 5px;
+}
+
+.uk-delimit-small-padding-bottom {
+    padding-bottom: 5px;
+}
+
+
+/**
+* Circle 自适应圆
+* Addtime:2017-02-07
+*/
+
+.adaptive-circle {
+    width: 85%;
+    height: 0;
+    padding-top: 85%;
+    border-radius: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.adaptive-circle .layout {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.adaptive-circle .layout.middle:before {
+    display: inline-block;
+    vertical-align: middle;
+    /*content: '';*/
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+}
+
+.adaptive-circle .layout.middle div:first-child {
+    /*display: inline-block;*/
+    vertical-align: middle;
+}
+
+
+/**
+* border 
+* Addtime:2017-02-07
+*/
+
+.uk-delimit-border-circle {
+    border-radius: 8px;
+}
+
+.uk-delimit-border-circle2 {
+    border-radius: 30px;
+}
+
+.uk-delimit-border-circle3 {
+    border-radius: 0 10px 10px 0;
+}
+
+.uk-delimit-border-circle4 {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.uk-delimit-border {
+    border: 1px solid #e5e5e5;
+}
+
+.uk-delimit-border2 {
+    border: 1px solid #e15151;
+}
+
+.uk-delimit-border-pink {
+    border: 1px solid #fa80a5;
+}
+
+.uk-delimit-border-dashed {
+    border: 2px dashed #e5e5e5;
+}
+
+.uk-delimit-border-dashed2 {
+    border: 2px dashed #686869;
+}
+
+.uk-delimit-border-dashed3 {
+    border: 2px dashed #8acbf5;
+}
+
+.uk-delimit-border-dashed4 {
+    border: 2px dashed white;
+}
+
+.uk-delimit-border-bottom {
+    border-bottom: 1px dashed #e5e5e5;
+}
+
+
+/**
+* Table 
+* Addtime:2017-02-08
+*/
+
+.uk-delimit-calendar {
+    table-layout: fixed;
+    /*table-layout: fixed 可以让每个格子保持等宽：*/
+}
+
+
+/**
+* article 
+* Addtime:2017-02-17
+*/
+
+.container {
+    max-width: 640px;
+    min-width: 320px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+
+/**
+* button 
+* Addtime:2017-03-14
+*/
+
+.uk-demlit-button {
+    padding: 8px;
+}
+
+.uk-delimit-diybutton-gradient {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ff6c00), to(#ffa925));
+    background-image: -webkit-linear-gradient(top, #ff6c00, #ffa925);
+    background-image: -moz-linear-gradient(top, #ff6c00, #ffa925);
+    background-image: linear-gradient(to bottom, #ff6c00, #ffa925);
+}

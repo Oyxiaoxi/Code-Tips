@@ -1,0 +1,83 @@
+@import "../uikit-3.00.0/css/uikit.min.css";
+@import "../uikit-3.00.0/css/delimit.css";
+@import "../font/iconfont.css";
+@import "../uikit-3.00.0/normalize.css";
+#mailForm h3 {
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 0;
+    background: #3f4c6b;
+    padding: 5px;
+    color: white;
+}
+
+#mailForm p {
+    font-size: 14px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#mailForm i.iconfont {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+#mailForm ul li {
+    float: left;
+    list-style: none;
+    line-height: 30px;
+    margin-bottom: 8px;
+}
+
+#mailForm ul li.w30 {
+    width: 35%;
+    text-align: center;
+    font-size: 13px;
+    margin-right: 2%;
+}
+
+#mailForm ul li.w50 {
+    width: 63%;
+    font-size: 13px;
+}
+
+#mailForm ul li.clearfix{
+    clear: both;
+}
+
+#mailForm ul li select,
+#mailForm ul li input,
+#mailForm ul li textarea {
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    width: 85%;
+}
+
+#mailForm ul li input {
+    padding: 5px;
+}
+
+#mailForm ul li textarea {
+    height: 80px;
+    border: 1px solid #d9d9d9;
+    padding-left: 4px;
+    -webkit-box-sizing: border-box;
+    text-indent: 0;
+}
+
+#mailForm #saveForm {
+    display: block;
+    height: 30px;
+    width: 30%;
+    border: 1px solid #858fa6;
+    background: #4a5775;
+    background: -moz-linear-gradient(top, #606c88, #3f4c6b);
+    background: -webkit-gradient(linear, left top, left bottom, from(#606c88), to(#3f4c6b));
+    border-radius: 10px;
+    color: white;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+    font-size: 16px;
+    margin: 0 auto;
+    outline: none;
+    font-weight: bold;
+}
