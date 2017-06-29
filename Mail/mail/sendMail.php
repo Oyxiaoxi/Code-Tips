@@ -24,7 +24,7 @@
         $mail->IsHTML(true);
         $mail->Subject = "You have a new short message, please pay attention to check!";
         $mail->Body = "<style type='text/css'>table{width:400px;border-collapse:collapse;}table tr {text-align:center;}table tr td{width:50%;border:1px #0066ff solid;}</style>
-        <table><tr><td colspan='2'>免费预约</td></tr><tr><td>科室</td><td>".$fgenre."</td></tr><tr><td>姓名</td><td>".$fname."</td></tr><tr><td>电话</td><td>".$ftell."</td></tr><tr><td>留言</td><td>".$fmessage."</td></tr><tr><td>预约时间</td><td>".$ftime."</td></tr><tr><td>表单所在网页</td><td>".$_SERVER["HTTP_REFERER"]."</td></tr><tr><td>表单所在网页</td><td>".$_SERVER['REMOTE_ADDR']."</td></tr></table>"; //邮件内容，上面设置HTML，则可以是HTML
+        <table><tr><td colspan='2'>免费预约</td></tr><tr><td>类型</td><td>".$fgenre."</td></tr><tr><td>姓名</td><td>".$fname."</td></tr><tr><td>电话</td><td>".$ftell."</td></tr><tr><td>留言</td><td>".$fmessage."</td></tr><tr><td>预约时间</td><td>".$ftime."</td></tr><tr><td>表单所在网页</td><td>".$_SERVER["HTTP_REFERER"]."</td></tr><tr><td>表单所在网页</td><td>".$_SERVER['REMOTE_ADDR']."</td></tr></table>"; //邮件内容，上面设置HTML，则可以是HTML
         if($mail->Send()){
             getRes(1,"预约成功，请保持电话畅通。");
         }else{
