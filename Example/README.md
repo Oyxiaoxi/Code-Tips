@@ -338,3 +338,109 @@ console.log(date.Format("yy-M-d hh:mm:ss"));
 6-16位字母、数字或字符组合的登录密码：
 /^((?=.*[a-z])(?=.*\d)|(?=[a-z])(?=.*[#@!$~%^&*])|(?=.*\d)(?=.*[#@!$~%^&*]))[a-z\d#@!$~%^&*]{6,16}$/i.test($pwd.val())
 ```
+
+### 15.如何装逼用代码骂别人SB
+```javascript
+(!(~+[])+{})[--[~+""][+[]]*[~+[]] + ~~!+[]]+({}+[])[[~!+[]]*~+[]]
+```
+### 16.如何用代码优雅的证明自己NB
+```javascript
+console.log(([][[]]+[])[+!![]]+([]+{})[!+[]+!![]])
+```
+### 17.JavaScript 错误处理的方式的正确姿势
+```javascript
+try {
+    something
+} catch (e) {
+    window.location.href =
+        "http://stackoverflow.com/search?q=[js]+" +
+        e.message;
+}
+```
+
+### 18.从一行代码里面学点JavaScript
+```javascript
+[].forEach.call($$("*"),function(a){
+    a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16)
+})
+
+## 翻译成正常语言就是这样的
+Array.prototype.forEach.call(document.querySelectorAll('*'), 
+dom => dom.style.outline = `1px solid #${parseInt(Math.random() * 
+Math.pow(2,24)).toString(16)}`)
+```
+
+### 19.论如何优雅的取随机字符串
+```javascript
+Math.random().toString(16).substring(2) // 13位
+Math.random().toString(36).substring(2) // 11位
+```
+
+### 20.匿名函数自执行
+```javascript
+( function() {}() );
+( function() {} )();
+[ function() {}() ];
+
+~ function() {}();
+! function() {}();
++ function() {}();
+- function() {}();
+
+delete function() {}();
+typeof function() {}();
+void function() {}();
+new function() {}();
+new function() {};
+
+var f = function() {}();
+
+1, function() {}();
+1 ^ function() {}();
+1 > function() {}();
+// ...
+```
+
+### 21.另外一种undefined
+```javascript
+var data = void 0; // undefined
+```
+
+### 22.如何优雅的实现金钱格式化：1234567890 --> 1,234,567,890
+```javascript
+用正则魔法实现：
+var test1 = '1234567890'
+var format = test1.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+console.log(format) // 1,234,567,890
+非正则的优雅实现：
+ function formatCash(str) {
+       return str.split('').reverse().reduce((prev, next, index) => {
+            return ((index % 3) ? next : (next + ',')) + prev
+       })
+}
+console.log(formatCash('1234567890')) // 1,234,567,890
+```
+
+### 23.最短的代码实现数组去重
+```javascript
+[...new Set([1, "1", 2, 1, 1, 3])] //阿里面试题
+```
+
+### 24.用最短的代码实现一个长度为m(6)且值都n(8)的数组
+```javascript
+Array(6).fill(8)
+```
+
+### 25.取出一个数组中的最大值和最小值
+```javascript
+var numbers = [5, 458 , 120 , -215 , 228 , 400 , 122205, -85411]; 
+var maxInNumbers = Math.max.apply(Math, numbers); 
+var minInNumbers = Math.min.apply(Math, numbers);
+```
+
+### 26.将argruments对象转换成数组
+```javascript
+var argArray = Array.prototype.slice.call(arguments);
+或者ES6：
+var argArray = Array.from(arguments)
+```
