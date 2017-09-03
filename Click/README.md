@@ -272,7 +272,59 @@ $("div").on("click", function(event){
 
 > click会大概慢20ms，可能是因为它前面还要触发mouse的事件。
 ### 这样我们就实现了一个自定义tap事件，是自己封装了一个事件机制，fastclick是使用原生的Event，如下fastclick的源码，在touchend的回调函数里面执
+```javascript
+touch = event.changedTouches[0];
 
+// Synthesise a click event, with an extra attribute so it can be tracked
+clickEvent = document.createEvent('MouseEvents');
+clickEvent.initMouseEvent(this.determineEventType(targetElement), true, true, window, 1, touch.screenX, touch.screenY, touch.clientX, touch.clientY, false, false, false, false, 0, null);
+clickEvent.forwardedTouchEvent = true; 
+targetElement.dispatchEvent(clickEvent);
+```
+>+ 然后再调event.preventDefault禁掉原本的click事件的触发。它里面还做了其它一些的兼容性的处理。
+>+ 这个时候如果要做一个放大的事件，你应该不难想到实现的方法。可以在touchstart里面获取event.touches两根手指的初始位置，保存初始化手指的距离，然后在touchmove里面再次获取新位置，计算新的距离减掉老的距离，如果是正数则说明是放大，反之缩小，放大和缩小的尺度也是可以取到一个相对值。手机Safari有一个gesturestart/gesturechange/gestureend事件，在gesturechange的event里面有一个放大比例scale的属性。读者可以自己尝试实现一个放大和缩小的手势事件。
+>+ 当知道了怎么实现一个自定义事件之后，现在来实现一个更为复杂的“摇一摇”事件。
 
+## 3. 摇一摇事件
 
+### html5新增了一个devicemotion的事件，可以使用手机的重力感应。
+```javascript
+window.ondevicemotion = function(event){
+    var gravity = event.accelerationIncludingGravity;
+    console.log(gravity.x, gravity.y, gravity.z);
+}
+```
 
+>+ x是手机短边，y是长边，z是和手机屏幕垂直的方向，当把手机平着放的时候，由于x、y和地平线平行，所以g(x) = g(y) = 0，而z和地平线垂直，所以g(z) = 9.8左右，同理当把手机竖着放的时候，g(x) = g(z) = 0，而g(y) = -9.8.
+>+ devicemotion事件会不断地触发，而且触发得很快。
+>+ y轴和x轴的变化范围从-45o到+45o，即这个区间是：
+>+ delta = 9.8 * sin(45o) * 2 = 13.8
+>+ 即只要x轴和y轴的g值变化超过13.8，我们就认为发生了摇一摇事件。
+
+```javascript
+const EMPTY_VALUE = 100;
+const THREAD_HOLD = 13.8;
+var minX = EMPTY_VALUE,
+    minY = EMPTY_VALUE;
+window.ondevicemotion = function(event){
+    var gravity = event.accelerationIncludingGravity,
+        x = gravity.x,
+        y = gravity.y;
+    if(x < minX) minX = x;
+    if(y < minY) minY = y;
+    if(Math.abs(x - minX) > THREAD_HOLD &&  
+            Math.abs(y - minY) > THREAD_HOLD){
+        console.log("shake");
+        var event = new CustomEvent("shake");
+        window.dispatchEvent(event);
+        minX = minY = EMPTY_VALUE;
+    }   
+}   
+    
+window.addEventListener("shake", function(){
+    console.log("window shake callback was called");
+});
+```
+
+#### 用一个minX和minY记录最小的值，每次devicemotion触发的时候就判断当前的g值与最小值的差值是否超过了阈值，如果是的话就创建一个CustomEvent的实例，然后disatch给window，window上兼听的onshake事件就会触发了。
+#### 这个shake会不会很容易触发，即使不是摇一摇操作它也触发了？根据实验上面代码如果不摇不容易触发shake，同时摇的时候比较容易触发。
