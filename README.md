@@ -111,4 +111,38 @@ const sleep = (timeountMS) => new Promise((resolve) => {
 ### Mon Mar 20 2017 10:40:45 GMT+0800 (CST) 0 -> 1 -> 2 -> 3 -> 4 -> 5
 ```
 
+## Safari的无痕浏览会禁掉本地存储，因此需要搞一个兼容性判断
+```javascript
+Data.localStorageEnabled = true;
+-- Safari的无痕浏览会禁用localStorage
+try{
+    window.localStorage.trySetData = 1;
+} catch(e) {
+    Data.localStorageEnabled = false;
+}
+
+setLocalData: function(key, value) { 
+    if (Data.localStorageEnabled) {
+        window.localStorage[key] = value;
+    }
+    else {   
+        util.setCookie("_L_" + key, value, 1000);
+    }
+}
+
+-- 在设置本地数据的时候，需要判断一下是不是支持本地存储，如果是的话就用localStorage，否则改用cookie。
+setLocalData: function(key, value) {
+    if(Data.localStorageEnabled) {
+        util.setLocalData = function(key, value){
+            return window.localStorage[key];
+        }
+    } else {
+        util.setLocalData = function(key, value){
+            return util.getCookie("_L_" + key);
+        }
+    }
+    return util.setLocalData(key, value);
+}
+```
+
 ### 看似简单，出错去出乎我的意外，纪录一下，为自己！！！
