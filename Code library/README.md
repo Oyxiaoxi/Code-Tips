@@ -227,10 +227,49 @@ var strTest='sad44654blog5a1sd67as9dablog4s5d16zxc4sdweasjkblogwqepaskdkblogahse
 // ES6中Array新增了一个静态方法from，可以把类似数组的对象转换为数组
 // Array.from(set)
 // [1,2,6,3,5,69,66,7,4,8,9663]
+// 第一种
 function removeRepeatArray(arr){
     return Array.from(new Set(arr))
 }
+
+// 第二种
+function xyz(arr) {
+  let a= [];
+  arr.forEach((item,index) => {
+    a.indexOf(item) ===-1 ? a.push(item) : ''
+  })
+  return a;
+}
+console.log(xyz([1,2,3,2,3]));
+// [1, 2, 3]
+
+// 第三种
+function xyz() {
+  let a= [];
+//  Array.from(arguments[0]).forEach((item,index) => {
+//    a.indexOf(item) ===-1 ? a.push(item) : ''
+// })
+//  Array.prototype  可以换成[]
+Array.prototype.forEach.call(arguments[1], (item,index) => {
+   a.indexOf(item) ===-1 ? a.push(item) : ''
+})
+  return a;
+}
+console.log(xyz([1,2,3,2,3],[2,2,1]));
+//[1, 2, 3]
+
+// 第四种
+Array.prototype.uniq = function() {
+  let a= [];
+    this.forEach((item,index) => {
+      a.indexOf(item) ===-1 ? a.push(item) : ''
+    })
+    return a;
+}
+console.log([1,2,1,3].uniq());
+//[1, 2, 3]
 ```
+
 
 ### 2.2 数组顺序打乱
 ```javascript
