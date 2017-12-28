@@ -1142,3 +1142,100 @@ loadImg:function(className, num) {
 }
 ```
 
+## 7.other
+### 7.1 获取验证码倒计时
+```javascript
+// jquery实现方法
+var verifCode = $('.get-verifCode');
+function time(){
+    if (wait < 0){
+        verifCode.text("获取验证码"); //改变文字
+        verifCode.removeAttr("disabled"); //按钮设置为可点击状态
+        wait = 60; //设置60秒倒计时
+    } else {
+        verifCode.attr("disabled", "true"); //开始计时，将按钮设置为不可点击
+        verifCode.text(wait + "秒后重获取"); //改变文字
+        wait--;
+        setTimeout(function(){
+            time();
+        },1000)
+    }
+}
+
+// vue实现方法
+<button class="getYZM" @click="onGetYZM()" :disabled="yzmBtn">{{yzmTip}}<button>
+data:{
+	yzmBtn:false,
+	yzmTip:'获取验证码',
+}
+methods:{
+	function time() {
+		if (wait < 0) {
+	   that.yzmTip="获取验证码"
+		that.yzmBtn=false
+		  wait = 60;
+	 } else {
+		that.yzmBtn=true;
+		that.yzmTip= wait + "秒后获取";
+		wait -- ;
+		setTimeout(function () {
+				time();
+		}, 1000)
+	}
+}
+```
+
+### 7.1 时间格式化输出
+```javascript
+time() {
+	var time = $('#times'); //获取要显示倒计时的时间节点
+	if (wait < 0) {
+		time.text("00:00:00");
+		wait = 10; //倒计时时间熟，设置起始秒数
+	} else {
+		time.text(this.formatSeconds(wait)); //调用格式化的方法
+		wait--;
+		//调用计时器，开始计时
+		setTimeout(function() {
+			that.time();
+		}, 1000)
+	}
+},
+//格式化时秒分
+formatSeconds(s) {
+	if (s > -1) {
+		var hour = Math.floor(s / 3600);
+		var min = Math.floor(s / 60) % 60;
+		var sec = s % 60;
+		if (hour < 10) {
+			t = '0' + hour + ":";
+		} else {
+			t = hour + ":";
+		}
+		if (min < 10) {
+			t += "0";
+		}
+		t += min + ":";
+		if (sec < 10) {
+			t += "0";
+		}
+		t += sec;
+	}
+	return t;
+}
+``` 
+
+### 7.2 控制手机物理返回按键
+```javascript
+pushHistory() { 
+    var state = { title: "title", url: "#" };
+    window.history.pushState(state, "title", "#");
+}
+```
+> 进行调用
+```javascript
+pushHistory();
+window.addEventListener("popstate", function(e) {
+  location.href=""''
+}, false);
+```
