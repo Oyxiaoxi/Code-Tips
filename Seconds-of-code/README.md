@@ -160,7 +160,7 @@ const fibonacci = n => Array(n).fill(0).reduce((acc, val, i) => acc.concat(i > 1
 ```
 
 ### 过滤数组中的非唯一值
-> 将Array.filter（）用于仅包含唯一值的数组。
+> 将Array.filter（）用于仅包含唯一值的数组。   
 > 使用ES6 Set和… rest操作符去掉所有重复值。
 
 ```js 
@@ -300,7 +300,7 @@ const powerset = arr => arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r)))
 ```
 
 ### 范围内的随机整数, 随机数
-> 使用Math.random（）生成一个随机数并将其映射到所需的范围，使用Math.floor（）使其成为一个整数。   
+> 使用Math.random（）生成一个随机数并将其映射到所需的范围，使用Math.floor（）使其成为一个整数。     
 > 使用Math.random（）生成一个随机值，使用乘法将其映射到所需的范围。
 
 ```js
@@ -410,11 +410,9 @@ const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
 ```
 
 ### URL参数
-> 使用match() 与适当的正则表达式来获得所有键值对，适当的map() 。使用Object.assign（）和spread运算符（…）将所有键值对组合到一个对象中，将location.search作为参数传递给当前url。
-
-> UUID生成器
-
-> 使用crypto API生成符合RFC4122版本4的UUID。
+> 使用match() 与适当的正则表达式来获得所有键值对，适当的map() 。使用Object.assign（）和spread运算符（…）将所有键值对组合到一个对象中，将location.search作为参数传递给当前url。     
+> UUID生成器  
+> 使用crypto API生成符合RFC4122版本4的UUID。   
 
 ```js
 const getUrlParameters = url =>
