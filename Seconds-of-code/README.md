@@ -348,8 +348,8 @@ const rgbToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6
 ```
 
 ### 滚动到顶部
-> 使用document.documentElement.scrollTop或document.body.scrollTop获取到顶部的距离。
-> 从顶部滚动一小部分距离。
+> 使用document.documentElement.scrollTop或document.body.scrollTop获取到顶部的距离。  
+> 从顶部滚动一小部分距离。  
 > 使用window.requestAnimationFrame（）来滚动。
 
 ```js
@@ -411,7 +411,9 @@ const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
 
 ### URL参数
 > 使用match() 与适当的正则表达式来获得所有键值对，适当的map() 。使用Object.assign（）和spread运算符（…）将所有键值对组合到一个对象中，将location.search作为参数传递给当前url。
+
 > UUID生成器
+
 > 使用crypto API生成符合RFC4122版本4的UUID。
 
 ```js
