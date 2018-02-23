@@ -445,4 +445,30 @@ var argArray = Array.prototype.slice.call(arguments);
 var argArray = Array.from(arguments)
 ```
 
+### 27.ip地址解析
+> 把已知的ip二进制数值联合起来的十进制值，反解码为IP形式   
+> 如 2149583361 > 10000000 00100000 00001010 00000001 > "128.32.10.1"
+
+```js
+// 二进制转十进制
+function decodeIp(int32) {
+    var byt = int32.toString(2), // 2进制表示
+        reg = /(?:[0-1]{8})/g; // 每八位一组
+    //TODO 后期看看能有什么优化
+    return byt.match(reg).map(function(num){
+        return parseInt(num,2);//转换为十进制
+    }).join(".");
+}
+
+console.log(decodeIp(2149583361));
+
+// 位计算
+function decodeIp(int32) {
+  return [ int32 / 2 >> 23, (int32 / 2 >> 15) % 256, (int32 / 2 >> 7) % 256, int32 % 256 ].join(".");
+}
+
+console.log(decodeIp(2149583361));
+```
+
+
 
