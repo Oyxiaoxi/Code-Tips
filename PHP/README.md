@@ -380,3 +380,231 @@ function fibonacci($n)
 ```php
 fibonacci(6); // [0, 1, 1, 2, 3, 5]
 ```
+
+#### gcd
+> 计算两个或更多数字之间的最大公约数。
+```php
+function gcd(...$numbers)
+{
+    if (count($numbers) > 2) {
+        return array_reduce($numbers, 'gcd');
+    }
+
+    $r = $numbers[0] % $numbers[1];
+    return $r === 0 ? abs($numbers[1]) : gcd($numbers[1], $r);
+}
+```
+
+##### Examples
+```php
+gcd(8, 36); // 4
+gcd(12, 8, 32); // 4
+```
+
+#### isEven
+> 如果给定的数字是偶数，则返回true，否则返回false。
+```php
+function isEven($number)
+{
+    return ($number % 2) === 0;
+}
+```
+
+##### Examples
+```php
+isEven(4); // true
+```
+
+#### isPrime
+> 检查提供的整数是否为质数。
+```php
+function isPrime($number)
+{
+    $boundary = floor(sqrt($number));
+    for ($i = 2; $i <= $boundary; $i++) {
+        if ($number % $i === 0) {
+            return false;
+        }
+    }
+
+    return $number >= 2;
+}
+```
+
+##### Examples
+```php
+isPrime(3); // true
+```
+
+#### lcm
+> 返回两个或更多数字的最小公倍数。
+```php
+function lcm(...$numbers)
+{
+    $ans = $numbers[0];
+    for ($i = 1; $i < count($numbers); $i++) {
+        $ans = ((($numbers[$i] * $ans)) / (gcd($numbers[$i], $ans)));
+    }
+
+    return $ans;
+}
+```
+
+##### Examples
+```php
+lcm(12, 7); // 84
+lcm(1, 3, 4, 5); // 60
+```
+
+#### median
+> 返回数组数组的中值。
+```php
+function median($numbers)
+{
+    sort($numbers);
+    $totalNumbers = count($numbers);
+    $mid = floor($totalNumbers / 2);
+
+    return ($totalNumbers % 2) === 0 ? ($numbers[$mid - 1] + $numbers[$mid]) / 2 : $numbers[$mid];
+}
+```
+
+##### Examples
+```php
+median([1, 3, 3, 6, 7, 8, 9]); // 6
+median([1, 2, 3, 6, 7, 9]); // 4.5
+```
+
+### String
+
+#### endsWith
+> 检查一个字符串是否以给定的子字符串结尾。
+```php
+function endsWith($haystack, $needle)
+{
+    return substr($haystack, -strlen($needle)) === $needle;
+}
+```
+
+##### Examples
+```php
+endsWith('Hi, this is me', 'me'); // true
+```
+
+#### firstStringBetween
+> 返回参数start和end之间的字符串之间的第一个字符串。
+```php
+function firstStringBetween($haystack, $start, $end)
+{
+    $char = strpos($haystack, $start);
+    if (!$char) {
+        return '';
+    }
+
+    $char += strlen($start);
+    $len = strpos($haystack, $end, $char) - $char;
+
+    return substr($haystack, $char, $len);
+}
+```
+
+##### Examples
+```php
+firstStringBetween('This is a [custom] string', '[', ']'); // custom
+```
+
+#### isLowerCase
+> 如果给定的字符串是小写，则返回true，否则返回false。
+```php
+function isLowerCase($string)
+{
+    $char = mb_substr($string, 0, 1, "UTF-8");
+    return mb_strtolower($char, "UTF-8") === $char;
+}
+```
+
+##### Examples
+```php
+isLowerCase('Morning shows the day!'); // false
+isLowerCase('hello'); // true
+```
+
+#### isUpperCase
+> 如果给定的字符串是大写，则返回true，否则返回false。
+```php
+function isUpperCase($string)
+{
+    $char = mb_substr($string, 0, 1, "UTF-8");
+    return mb_strtolower($char, "UTF-8") !== $char;
+}
+```
+
+##### Examples
+```php
+isUpperCase('Morning Shows The Day!'); // true
+isUpperCase('qUick Fox'); // false
+```
+
+#### palindrome
+> 如果给定的字符串是回文，则返回true，否则返回false。
+```php
+function palindrome($string)
+{
+    return strrev($string) === $string;
+}
+```
+
+##### Examples
+```php
+palindrome('racecar'); // true
+```
+
+#### startsWith
+> 检查一个字符串是否以给定的子字符串开头。
+```php
+function startsWith($haystack, $needle)
+{
+    return substr($haystack, 0, strlen($needle)) === $needle;
+}
+```
+
+##### Examples
+```php
+startsWith('Hi, this is me', 'Hi'); // true
+```
+
+### Function
+
+#### compose
+> 将组成多个函数的新函数返回为单个可调用函数。
+```php
+function compose(...$functions)
+{
+    return array_reduce(
+        $functions,
+        function ($carry, $function) {
+            return function ($x) use ($carry, $function) {
+                return $function($carry($x));
+            };
+        },
+        function ($x) {
+            return $x;
+        }
+    );
+}
+```
+
+##### Examples
+```php
+$compose = compose(
+    // add 2
+    function ($x) {
+        return $x + 2;
+    },
+    // multiply 4
+    function ($x) {
+        return $x * 4;
+    }
+);
+$compose(3); // 20
+```
