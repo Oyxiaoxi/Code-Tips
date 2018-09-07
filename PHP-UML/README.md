@@ -24,4 +24,4 @@
 #### 2. 类关系
 > 类与类之间的关系主要有六种：继承、实现、组合、聚合、关联和依赖。
 
-![类关系图](https://github.com/Oyxiaoxi/Code-Tips/PHP-UML/images/arrow.png)
+![类关系图](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/arrow.png)
