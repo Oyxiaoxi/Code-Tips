@@ -221,12 +221,13 @@ $line1->addDriver($jack);
 print_r($jack);
 ```
 
-> 在多重性关系中，可以直接在关联直线上增加一个数字，表示与之对应的另一个类的对象的个数。
-    + 1..1：仅一个
-    + 0..*：零个或多个
-    + 1..*：一个或多个
-    + 0..1：没有或只有一个
-    + m..n：最少m、最多n个 (m<=n)
+> 在多重性关系中，可以直接在关联直线上增加一个数字，表示与之对应的另一个类的对象的个数。  
+
++ 1..1：仅一个
++ 0..*：零个或多个
++ 1..*：一个或多个
++ 0..1：没有或只有一个
++ m..n：最少m、最多n个 (m<=n)
 
 ##### 3.6 依赖关系
 > 依赖关系（Dependence）：假设A类的变化引起了B类的变化，则说名B类依赖于A类。  
@@ -255,7 +256,7 @@ class Car
     }
 }
 
-// 客户端代码
+// 输出
 $car = new Car;
 echo $car->beforeRun(new Oil());
 ```
@@ -265,3 +266,10 @@ echo $car->beforeRun(new Oil());
 
 ![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/whole.png)
 
+
+##### Laravel中 app 下的 user 类的各种关系
+![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/bemogrppo.png)
+
+
+#### 工具推荐
+[UMLet](https://www.umlet.com/)
