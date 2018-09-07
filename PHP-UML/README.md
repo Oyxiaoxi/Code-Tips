@@ -148,7 +148,7 @@ echo $man->display();
 
 + 例如：公交车司机和工衣、工帽是整体与部分的关系，但是可以分开，工衣、工帽可以穿在别的司机身上，公交司机也可以穿别的工衣、工帽。  
 
-!()[https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/aggregation.png]
+![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/aggregation.png)
 
 ```php
 class Clothes {
@@ -192,7 +192,7 @@ echo $driver->show();
 + 关联关系有四种：双向关联、单向关联、自关联、多重数关联。
 + 例如：汽车和司机，一辆汽车对应特定的司机，一个司机也可以开多辆车。  
 
-!()[https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/association.png]
+![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/association.png)
 
 ```php
 class Driver
@@ -235,7 +235,7 @@ print_r($jack);
 
 + 例如：汽车依赖汽油，如果没有汽油，汽车将无法行驶。  
 
-!()[https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/dependence.png]
+![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/dependence.png)
 
 ```php
 class Oil
@@ -263,5 +263,5 @@ echo $car->beforeRun(new Oil());
 #### 总结
 > 这六种类关系中，组合、聚合和关联的代码结构一样，可以从关系的强弱来理解，各类关系从强到弱依次是：继承→实现→组合→聚合→关联→依赖。  
 
-!()[https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/whole.png]
+![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/whole.png)
 
