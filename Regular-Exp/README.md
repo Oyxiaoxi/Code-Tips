@@ -4,7 +4,7 @@
 [Regular-Exp](https://regex101.com/)
 
 ### 校验正则集合
-```javascript
+```bash
 真实姓名或昵称: 
 /^[\u4e00-\u9fa5a-zA-Z0-9]+$/.test($name.val())
 /^([\u4e00-\u9fa5]{1,20}|[a-zA-Z\.\s]{1,20})$/.test($name.val())
@@ -84,7 +84,7 @@ if (!s.match(/^[a-zA-Z]+:\\/\\//))
 匹配HTML标签：
 /<\\/?\\w+((\\s+\\w+(\\s*=\\s*(?:".*?"|'.*?'|[\\^'">\\s]+))?)+\\s*|\\s*)\\/?>/
 
-匹配style=""：
-/style="[^"]*"/
-/style="([^"]*)"/
+匹配style=""：  
+/style="[^"]*"/  
+/style="([^"]*)"/  
 ```
