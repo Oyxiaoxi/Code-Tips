@@ -1,8 +1,8 @@
 ### 面向对象设计的SOLID原则
 > S.O.L.I.D 是面向对象设计和编程 OOD&OOP 中几个重要编码原则 Programming Priciple 的首字母缩写。
 
-|缩写|英文|中文|解释|
-|:--|:--:|:--|---|
+|缩写|英文|中文|
+|:--|:--:|:--|
 |SRP|The Single Responsibility Principle|单一责任原则|
 |OCP|The Open Closed Principle|开放封闭原则|
 |LSP|The Liskov Substitution Principle|	里氏替换原则|
