@@ -343,10 +343,12 @@ console.log(date.Format("yy-M-d hh:mm:ss"));
 ```javascript
 (!(~+[])+{})[--[~+""][+[]]*[~+[]] + ~~!+[]]+({}+[])[[~!+[]]*~+[]]
 ```
+
 ### 16.如何用代码优雅的证明自己NB
 ```javascript
 console.log(([][[]]+[])[+!![]]+([]+{})[!+[]+!![]])
 ```
+
 ### 17.JavaScript 错误处理的方式的正确姿势
 ```javascript
 try {
