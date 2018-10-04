@@ -24,7 +24,7 @@
 #### 2. 类关系
 > 类与类之间的关系主要有六种：继承、实现、组合、聚合、关联和依赖。
 
-![类关系图](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/arrow.png)
+![类关系图](https://github.com/Oyxiaoxi/Code-Tips/blob/master/Laravel/PHP-UML/images/arrow.png)
 
 #### 3. 6种类关系
 > **组合、聚合、关联**这三种类关系的代码结构一样，都是用属性来保存另一个类的引用，所以要通过内容间的关系来区别。
@@ -34,7 +34,7 @@
 > 继承关系中，子类继承父类的所有功能，父类所具有的属性、方法，子类应该都有。子类中除了与父类一致的信息以外，还包括额外的信息。
 
 + 例如：公交车、出租车和小轿车都是汽车，他们都有名称，并且都能在路上行驶。
-![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/realization.png)
+![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/Laravel/PHP-UML/images/realization.png)
 
 ```php
 class Car {
@@ -72,7 +72,7 @@ echo $line2->name . $line2->run();
 > 接口（包括抽象类）是方法的集合，在实现关系中，类实现了接口，类中的方法实现了接口声明的所有方法。
 
 + 例如：汽车和轮船都是交通工具，而交通工具只是一个可移动工具的抽象概念，船和车实现了具体移动的功能。
-![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/implement.png)
+![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/Laravel/PHP-UML/images/implement.png)
 
 ```php
 interface Vehicle {
@@ -107,7 +107,7 @@ echo $car->run();
 > 组合关系表示类之间整体与部分的关系，整体和部分有一致的生存期。一旦整体对象不存在，部分对象也将不存在，是同生共死的关系。
 
 + 例如：人由头部和身体组成，两者不可分割，共同存在。
-![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/composition.png)
+![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/Laravel/PHP-UML/images/composition.png)
 
 ```php
 class Head {
@@ -148,7 +148,7 @@ echo $man->display();
 
 + 例如：公交车司机和工衣、工帽是整体与部分的关系，但是可以分开，工衣、工帽可以穿在别的司机身上，公交司机也可以穿别的工衣、工帽。  
 
-![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/aggregation.png)
+![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/Laravel/PHP-UML/images/aggregation.png)
 
 ```php
 class Clothes {
@@ -192,7 +192,7 @@ echo $driver->show();
 + 关联关系有四种：双向关联、单向关联、自关联、多重数关联。
 + 例如：汽车和司机，一辆汽车对应特定的司机，一个司机也可以开多辆车。  
 
-![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/association.png)
+![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/Laravel/PHP-UML/images/association.png)
 
 ```php
 class Driver
@@ -236,7 +236,7 @@ print_r($jack);
 
 + 例如：汽车依赖汽油，如果没有汽油，汽车将无法行驶。  
 
-![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/dependence.png)
+![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/Laravel/PHP-UML/images/dependence.png)
 
 ```php
 class Oil
@@ -264,11 +264,11 @@ echo $car->beforeRun(new Oil());
 #### 总结
 > 这六种类关系中，组合、聚合和关联的代码结构一样，可以从关系的强弱来理解，各类关系从强到弱依次是：继承→实现→组合→聚合→关联→依赖。  
 
-![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/whole.png)
+![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/Laravel/PHP-UML/images/whole.png)
 
 
 ##### Laravel中 app 下的 user 类的各种关系
-![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/PHP-UML/images/bemogrppo.png)
+![](https://github.com/Oyxiaoxi/Code-Tips/blob/master/Laravel/PHP-UML/images/bemogrppo.png)
 
 
 #### 工具推荐
