@@ -1,6 +1,6 @@
 ###                           Laravel 中多态关系的表单验证                        
 
-![](/Volumes/WorkDate/Project/git/JavaScript-Tips/Laravel/Form validation for polymorphic relationships/images/pic01.png)
+![](https://raw.githubusercontent.com/Oyxiaoxi/Code-Tips/master/Laravel/Form%20validation%20for%20polymorphic%20relationships/images/pic01.png)
 
 在使用 Laravel 开发应用的时候都会有评论模块吧，而且我们通常将该模块设计为多态关系：
 
