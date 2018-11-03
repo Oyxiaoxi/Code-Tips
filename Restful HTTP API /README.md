@@ -56,7 +56,7 @@ RESTful 的设计理念基于 HTTP 协议，因为 [Roy Fielding](http://roy.gbi
 
      Github Api 虽然默认使用了第一种方法，但是其实是推荐并实现了第二种方法的，我们同样也尽量使用第二种方式。
 
-     ![](/Volumes/WorkDate/Project/git/JavaScript-Tips/Restful HTTP API /images/iVESOhNlvt.png)
+     ![](https://raw.githubusercontent.com/Oyxiaoxi/Code-Tips/master/Restful%20HTTP%20API%20/images/iVESOhNlvt.png)
 
 4. **用 URL 定位资源**
 
@@ -154,3 +154,58 @@ RESTful 的设计理念基于 HTTP 协议，因为 [Roy Fielding](http://roy.gbi
 8. **数据响应格式**
 
    考虑到响应数据的可读性及通用性，默认使用 JSON 作为数据响应格式。如果客户端有需求使用其他的响应格式，例如 XML，需要在 Accept 头中指定需要的格式。
+
+   ```bash
+   https://api.larabbs.com/
+       Accept: application/prs.larabbs.v1+json
+       Accept: application/prs.larabbs.v1+xml
+   ```
+
+   对于错误数据，默认使用如下结构：
+
+   ```php
+   'message' => ':message',          // 错误的具体描述
+   'errors' => ':errors',            // 参数的具体错误描述，422 等状态提供
+   'code' => ':code',                // 自定义的异常码
+   'status_code' => ':status_code',  // http状态码
+   'debug' => ':debug',              // debug 信息，非生产环境提供
+   ```
+
+   例如：
+
+   ```json
+   {
+       "message": "422 Unprocessable Entity",
+       "errors": {
+           "name": [
+               "姓名 必须为字符串。"
+           ]
+       },
+       "status_code": 422
+   }
+   ```
+
+   ```json
+   {
+       "message": "您无权访问该订单",
+       "status_code": 403
+   }
+   ```
+
+9. **调用频率限制**
+
+   为了防止服务器被攻击，减少服务器压力，需要对接口进行合适的限流控制，需要在响应头信息中加入合适的信息，告知客户端当前的限流情况
+
+   - X-RateLimit-Limit :100     最大访问次数
+   - X-RateLimit-Remaining :93   剩余的访问次数
+   - X-RateLimit-Reset :1513784506   到该时间点，访问次数会重置为 `X-RateLimit-Limit`
+
+   超过限流次数后，需要返回 `429 Too Many Requests` 错误。
+
+10. **编写文档**
+
+    为了方便用户使用，我们需要提供清晰的文档，尽可能包括以下几点：
+
+    - 包括每个接口的请求参数，每个参数的类型限制，是否必填，可选的值等。
+    - 响应结果的例子说明，包括响应结果中，每个参数的释义。
+    - 对于某一类接口，需要有尽量详细的文字说明，比如针对一些特定场景，接口应该如何调用。
